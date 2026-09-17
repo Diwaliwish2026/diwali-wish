@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diwali Surprise 🪔</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#16002b,#6b1600);
+color:white;
+text-align:center;
+min-height:100vh;
+overflow:hidden;
+}
+
+.container{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
+}
+
+.card{
+width:100%;
+max-width:430px;
+padding:35px 20px;
+border-radius:25px;
+background:rgba(255,255,255,.10);
+box-shadow:0 0 30px rgba(255,180,0,.3);
+}
+
+.gift{
+font-size:90px;
+animation:bounce 1.5s infinite;
+}
+
+h1{
+font-size:30px;
+}
+
+p{
+font-size:18px;
+line-height:1.6;
+}
+
+button{
+margin-top:20px;
+padding:16px 32px;
+border:0;
+border-radius:40px;
+background:#ffd700;
+color:#5a1800;
+font-size:19px;
+font-weight:bold;
+box-shadow:0 0 25px #ffd700;
+}
+
+#surprise{
+display:none;
+}
+
+.diya{
+font-size:90px;
+animation:glow 1s infinite alternate;
+}
+
+.wish{
+font-size:32px;
+font-weight:bold;
+margin:20px 0;
+}
+
+.firework{
+position:fixed;
+font-size:30px;
+animation:fall 3s linear infinite;
+}
+
+@keyframes bounce{
+50%{transform:translateY(-15px)}
+}
+
+@keyframes glow{
+from{filter:drop-shadow(0 0 5px orange)}
+to{filter:drop-shadow(0 0 30px yellow)}
+}
+
+@keyframes fall{
+from{transform:translateY(-80px);opacity:1}
+to{transform:translateY(110vh);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card" id="start">
+
+<div class="gift">🎁</div>
+
+<h1>Aapke Liye Ek Surprise Hai ❤️</h1>
+
+<p>Diwali par aapke liye ek chhota sa surprise...</p>
+
+<button onclick="openSurprise()">OPEN SURPRISE 🪔</button>
+
+</div>
+
+
+<div class="card" id="surprise">
+
+<div class="diya">🪔</div>
+
+<div class="wish">
+✨ HAPPY DIWALI ✨
+</div>
+
+<p>
+Aapki zindagi khushiyon,<br>
+roshni aur tarakki se bhar jaye ❤️
+</p>
+
+<p>
+🪔 Shubh Deepawali 🪔
+</p>
+
+</div>
+
+</div>
+
+
+<script>
+
+function openSurprise(){
+
+document.getElementById("start").style.display="none";
+
+document.getElementById("surprise").style.display="block";
+
+for(let i=0;i<40;i++){
+
+let f=document.createElement("div");
+
+f.className="firework";
+
+f.innerHTML=["🎆","✨","⭐","💥"][Math.floor(Math.random()*4)];
+
+f.style.left=Math.random()*100+"%";
+
+f.style.animationDelay=Math.random()*3+"s";
+
+document.body.appendChild(f);
+
+}
+
+}
+
+</script>
+
+</body>
+  </html>
